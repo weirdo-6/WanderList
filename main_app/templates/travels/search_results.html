@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Search Results for "{{ query }}"</h2>
+
+<!-- Planned Trips -->
+<h3>Planned Trips</h3>
+{% if planned_travels %}
+    {% for travel in planned_travels %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ travel.name }}</span>
+                <p>Country: {{ travel.country }}</p>
+                <p>City: {{ travel.city }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'detail' travel.id %}">View Details</a>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No planned trips found.</p>
+{% endif %}
+
+<!-- Completed Trips -->
+<h3>Completed Trips</h3>
+{% if completed_travels %}
+    {% for travel in completed_travels %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ travel.name }}</span>
+                <p>Country: {{ travel.country }}</p>
+                <p>City: {{ travel.city }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'detail' travel.id %}">View Details</a>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No completed trips found.</p>
+{% endif %}
+
+{% endblock %}

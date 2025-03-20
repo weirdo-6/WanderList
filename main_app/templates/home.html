@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div id="homepage">
+  <h1>✈️WanderList📍</h1>
+    <form method="GET" action="{% url 'search_trips' %}" class="search-form">
+  <hr>
+
+  <div class="homepage-content">
+    <div class="homepage-text">
+      <h2>📅Time for your next trip️! </h2>
+    </div>
+    <div class="homepage-img">
+      <img src="{% static 'images/wanderlist.jpg' %}" alt="WanderList Travel" id="home-img">
+    </div>
+  </div>
+</div>
+{% endblock %}

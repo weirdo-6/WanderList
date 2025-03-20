@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>📝 Planned Trips</h1>
+
+<form method="GET" action="{% url 'search_trips' %}" style="margin-bottom: 20px;">
+  <input
+    type="text"
+    name="q"
+    placeholder="Search your planned trips..."
+    value="{{ request.GET.q }}"
+    style="padding: 8px; width: 250px;"
+  >
+  <button type="submit" class="btn" style="margin-left: 10px;">Search</button>
+</form>
+
+<a href="{% url 'planned_trip_create' %}" class="btn" style="margin-bottom: 20px;">Add Planned Trip</a>
+
+{% if travels|length == 0 %}
+  <p>No planned trips yet. <a href="{% url 'planned_trip_create' %}">Add a new trip</a>!</p>
+{% endif %}
+
+{% for travel in travels %}
+  <div class="card">
+    <a href="{% url 'detail' travel.id %}">  <!-- ✅ travel.id -->
+      <div class="card-content">
+        <span class="card-title">{{ travel.name }}</span> <!-- ✅ travel.name -->
+        <p>{{ travel.city }}, {{ travel.country }}</p>   <!-- ✅ travel.city, travel.country -->
+        {% if travel.image %}
+          <img src="{{ travel.image }}" alt="{{ travel.name }}" style="width: 200px; height: auto; margin-top: 10px;">
+        {% else %}
+          <p>No image available.</p>
+        {% endif %}
+
+      </div>
+    </a>
+  </div>
+{% endfor %}
+{% endblock %}

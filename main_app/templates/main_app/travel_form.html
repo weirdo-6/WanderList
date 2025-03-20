@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if object %}
+    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+{% else %}
+    <h1>➕Add a Trip</h1>
+{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="input-field">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+    </div>
+
+    <div class="input-field">
+        {{ form.country.label_tag }}
+        {{ form.country }}
+    </div>
+
+    <div class="input-field">
+        {{ form.city.label_tag }}
+        {{ form.city }}
+    </div>
+
+    <div class="input-field">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+
+    <div class="input-field">
+        {{ form.image.label_tag }}
+        {{ form.image }}
+    </div>
+
+    <input type="submit" value="Submit" class="btn">
+</form>
+
+
+{% endblock %}

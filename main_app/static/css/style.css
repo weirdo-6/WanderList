@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1, .brand-logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+nav .nav-wrapper {
+    background: linear-gradient(90deg, #49bd13 0%, #039be5 100%);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer.page-footer {
+    padding-top: 0;
+    text-align: right;
+    background: linear-gradient(90deg, #49bd13 0%, #039be5 100%);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.homepage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.homepage-header h1 {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #26a69a;
+    box-shadow: 0 0 5px rgba(38, 166, 154, 0.5);
+}
+
+.navbar-search-form {
+    margin-top: 10px;
+}
+
+.navbar-search-form input[type="text"] {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 200px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-search-form input[type="text"]:focus {
+    border-color: #26a69a;
+    box-shadow: 0 0 5px rgba(38, 166, 154, 0.5);
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-search-form {
+        display: none;
+    }
+}
+
+
+#homepage {
+    text-align: center;
+}
+
+a {
+    color: #26a69a;
+}
+
+@media only screen and (max-width: 600px) {
+#home-img {
+    max-width: 100%;
+  }
+}
+#about-img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}

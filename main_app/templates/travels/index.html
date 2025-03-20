@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> ✅Completed Trips</h1>
+
+<form method="GET" action="{% url 'search_trips' %}" style="margin-bottom: 20px;">
+  <input
+    type="text"
+    name="q"
+    placeholder="Search your completed trips..."
+    value="{{ request.GET.q }}"
+    style="padding: 8px; width: 250px;"
+  >
+  <button type="submit" class="btn" style="margin-left: 10px;">Search</button>
+</form>
+
+<a href="{% url 'completed_trip_create' %}" class="btn">Add Completed Trip</a>
+
+{% if travels|length == 0 %}
+<p>Clique <a href="{% url 'completed_trip_create' %}"> HERE </a> to start your list.</p>
+{% endif %}
+
+{% for travel in travels %}
+
+<div class="card">
+
+    <a href="{% url 'detail' travel.id %}">
+  <div class="card-content">
+
+    <div class="flex-container">
+
+      <div>
+
+        <span class="card-title"> {{ travel.name }} </span>
+
+        <p>Country: {{ travel.country }}</p>
+        <p>City: {{ travel.city }}</p>
+
+      </div>
+      
+
+      <div class="right">
+        {% if travel.image == None %}
+        <img height="100px" src="/static/images/no-image.png" />
+        {% else %}
+        <img height="100px" src="{{ travel.image }}" />
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}
