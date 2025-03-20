@@ -1,4 +1,6 @@
-ITECH  Assessed Coursework***
+***
+ITECH  Assessed Coursework
+***
 
 ### 📝 Description
 An app for planning and tracking all your travels and places you want to be or have been to. Simply record your visits and plan your future travel with the checklist feature.
